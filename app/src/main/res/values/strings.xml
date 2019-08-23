@@ -3,4 +3,6 @@
     <string name="list">List</string>
     <string name="grid">Grid</string>
     <string name="card_view">Card View</string>
+    <string name="favorite">favorite</string>
+    <string name="share">share</string>
 </resources>

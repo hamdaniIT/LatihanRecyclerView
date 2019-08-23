@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.action_card:
                 setTitle("Card View");
+                showRecyclerCardView();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -70,5 +71,11 @@ public class MainActivity extends AppCompatActivity {
         GridPresidentAdapter gridPresidentAdapter= new GridPresidentAdapter(this);
         gridPresidentAdapter.setListPresident(list);
         rvCategory.setAdapter(gridPresidentAdapter);
+    }
+    private void showRecyclerCardView(){
+        rvCategory.setLayoutManager(new LinearLayoutManager(this));
+        CardViewPresidentAdapter cardViewPresidentAdapter= new CardViewPresidentAdapter(this);
+        cardViewPresidentAdapter.setListPresident(list);
+        rvCategory.setAdapter(cardViewPresidentAdapter);
     }
 }

@@ -2,6 +2,7 @@ package com.example.latihanrecyclerview;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.action_grid:
                 setTitle("Grid");
+                showRecyclerGrid();
                 break;
             case R.id.action_card:
                 setTitle("Card View");
@@ -62,5 +64,11 @@ public class MainActivity extends AppCompatActivity {
         //tampilkan data adapter ker Recycler view
         rvCategory.setAdapter(listPresidentAdapter);
 
+    }
+    private void showRecyclerGrid(){
+        rvCategory.setLayoutManager(new GridLayoutManager(this,2));
+        GridPresidentAdapter gridPresidentAdapter= new GridPresidentAdapter(this);
+        gridPresidentAdapter.setListPresident(list);
+        rvCategory.setAdapter(gridPresidentAdapter);
     }
 }
